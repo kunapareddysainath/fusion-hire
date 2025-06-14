@@ -12,6 +12,7 @@ import Terms from './pages/Terms';
 import EqualOpportunity from './pages/EqualOpportunity';
 import DataSecurity from './pages/DataSecurity';
 import CookiePolicy from './pages/CookiePolicy';
+import NotFound from './pages/Notfound';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
             <Route path="/about" element={<About />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/services" element={<Services />} />
