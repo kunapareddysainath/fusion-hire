@@ -1,233 +1,205 @@
 import React from 'react';
-import { Users, Target, Heart, Award, TrendingUp, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Users, Target, Award, Heart } from 'lucide-react';
+import { AnimatedSection } from '../components/ui/AnimatedSection';
 
-const About = () => {
+export const About: React.FC = () => {
+  const values = [
+    {
+      icon: Target,
+      title: 'Excellence',
+      description: 'We strive for excellence in every placement, ensuring the perfect match between talent and opportunity.',
+    },
+    {
+      icon: Heart,
+      title: 'Integrity',
+      description: 'Our business is built on trust, transparency, and ethical practices in all our interactions.',
+    },
+    {
+      icon: Users,
+      title: 'Partnership',
+      description: 'We build lasting relationships with our clients and candidates, becoming true strategic partners.',
+    },
+    {
+      icon: Award,
+      title: 'Innovation',
+      description: 'We continuously evolve our methods and technology to stay ahead in the recruitment industry.',
+    },
+  ];
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+      <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              About Fusion Hire Tech
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+              About Fusion Hire Technologies
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Creating meaningful connections between talent and opportunity through innovative, inclusive staffing solutions.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We are a premier IT and staffing recruitment company dedicated to connecting 
+              exceptional talent with outstanding opportunities across diverse industries.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl">
-              <div className="flex items-center mb-6">
-                <div className="bg-primary-600 p-3 rounded-lg">
-                  <Target className="h-8 w-8 text-white" />
+      {/* Mission Section */}
+      <AnimatedSection>
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  At Fusion Hire Technologies, we believe that the right talent in the right role 
+                  can transform organizations and drive extraordinary results. Our mission is to 
+                  bridge the gap between exceptional talent and visionary companies.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  We leverage cutting-edge technologies, deep industry expertise, and a personalized 
+                  approach to deliver recruitment solutions that exceed expectations and create 
+                  lasting value for all stakeholders.
+                </p>
+              </div>
+              <div className="relative">
+                <img
+                  src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg"
+                  alt="Team collaboration"
+                  className="rounded-2xl shadow-xl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Values Section */}
+      <AnimatedSection>
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                Our Core Values
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                The principles that guide everything we do and define who we are
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                    <value.icon className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-blue-900 mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Team Section */}
+      <AnimatedSection>
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                Our Approach
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We combine human expertise with advanced technology to deliver personalized, 
+                efficient, and effective recruitment solutions.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary-500">1</span>
                 </div>
-                <h2 className="text-3xl font-bold text-neutral-900 ml-4">Our Vision</h2>
+                <h3 className="text-xl font-semibold text-blue-900 mb-3">
+                  Understanding
+                </h3>
+                <p className="text-gray-600">
+                  We deeply understand your unique requirements, culture, and long-term objectives.
+                </p>
               </div>
-              <p className="text-lg text-neutral-700 leading-relaxed">
-                To be the leading force in transforming the staffing industry by creating a world where every individual has equal access to meaningful career opportunities, regardless of their background, identity, or circumstances.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-accent-50 to-primary-50 p-8 rounded-2xl">
-              <div className="flex items-center mb-6">
-                <div className="bg-accent-600 p-3 rounded-lg">
-                  <Heart className="h-8 w-8 text-white" />
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary-500">2</span>
                 </div>
-                <h2 className="text-3xl font-bold text-neutral-900 ml-4">Our Mission</h2>
+                <h3 className="text-xl font-semibold text-blue-900 mb-3">
+                  Sourcing
+                </h3>
+                <p className="text-gray-600">
+                  We leverage our extensive network and advanced tools to identify top talent.
+                </p>
               </div>
-              <p className="text-lg text-neutral-700 leading-relaxed">
-                To revolutionize talent acquisition through inclusive hiring practices, innovative technology, and a deep commitment to empowering underrepresented groups, particularly women in technology and leadership roles.
-              </p>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary-500">3</span>
+                </div>
+                <h3 className="text-xl font-semibold text-blue-900 mb-3">
+                  Matching
+                </h3>
+                <p className="text-gray-600">
+                  We ensure perfect alignment between candidate skills and organizational needs.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
-      {/* DEI Practices */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              Diversity, Equity & Inclusion Practices
+      {/* Culture Section */}
+      <AnimatedSection>
+        <section className="py-20 bg-primary-500">
+          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Our Culture
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Our commitment to DEI isn't just a policy—it's the foundation of everything we do.
+            <p className="text-xl text-primary-100 mb-8 leading-relaxed">
+              We foster a culture of collaboration, continuous learning, and innovation. 
+              Our diverse team brings together expertise from various industries and backgrounds, 
+              creating a dynamic environment where ideas flourish and excellence thrives.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-primary-100 p-3 rounded-lg w-fit mb-4">
-                <Users className="h-8 w-8 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                Inclusive Sourcing
-              </h3>
-              <p className="text-neutral-600">
-                We actively source candidates from diverse backgrounds and underrepresented communities, ensuring equal representation in our talent pipeline.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-accent-100 p-3 rounded-lg w-fit mb-4">
-                <Award className="h-8 w-8 text-accent-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                Bias-Free Screening
-              </h3>
-              <p className="text-neutral-600">
-                Our recruitment process is designed to eliminate unconscious bias, focusing on skills, potential, and cultural fit rather than traditional markers.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-emerald-100 p-3 rounded-lg w-fit mb-4">
-                <TrendingUp className="h-8 w-8 text-emerald-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                Career Development
-              </h3>
-              <p className="text-neutral-600">
-                We provide ongoing mentorship and career development opportunities to help underrepresented professionals advance in their careers.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-purple-100 p-3 rounded-lg w-fit mb-4">
-                <Globe className="h-8 w-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                Community Partnerships
-              </h3>
-              <p className="text-neutral-600">
-                We partner with diversity-focused organizations, educational institutions, and community groups to expand our reach and impact.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-pink-100 p-3 rounded-lg w-fit mb-4">
-                <Heart className="h-8 w-8 text-pink-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                Women in Tech Initiative
-              </h3>
-              <p className="text-neutral-600">
-                Special programs and partnerships focused on placing women in technology and leadership roles, helping to close the gender gap in tech.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-indigo-100 p-3 rounded-lg w-fit mb-4">
-                <Target className="h-8 w-8 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                Measurable Impact
-              </h3>
-              <p className="text-neutral-600">
-                We track and report on diversity metrics, ensuring transparency and accountability in our commitment to inclusive hiring.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Company Values */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              Our Core Values
-            </h2>
-            <p className="text-xl text-neutral-600">
-              The principles that guide everything we do
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start space-x-4">
-              <div className="bg-primary-100 p-2 rounded-lg">
-                <Users className="h-6 w-6 text-primary-600" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                <div className="text-primary-100">Support Available</div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">Inclusion First</h3>
-                <p className="text-neutral-600">
-                  Every decision we make is filtered through the lens of inclusion and equity.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-accent-100 p-2 rounded-lg">
-                <Target className="h-6 w-6 text-accent-600" />
+                <div className="text-3xl font-bold text-white mb-2">Global</div>
+                <div className="text-primary-100">Reach & Network</div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">Excellence Always</h3>
-                <p className="text-neutral-600">
-                  We strive for excellence in every interaction, placement, and partnership.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-emerald-100 p-2 rounded-lg">
-                <Heart className="h-6 w-6 text-emerald-600" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">Authentic Relationships</h3>
-                <p className="text-neutral-600">
-                  We build genuine, long-lasting relationships based on trust and mutual respect.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 p-2 rounded-lg">
-                <TrendingUp className="h-6 w-6 text-purple-600" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">Continuous Innovation</h3>
-                <p className="text-neutral-600">
-                  We continuously evolve our methods and technology to better serve our clients and candidates.
-                </p>
+                <div className="text-3xl font-bold text-white mb-2">100%</div>
+                <div className="text-primary-100">Client Focused</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-primary-600 to-accent-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Join Our Journey
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Whether you're a company looking for exceptional talent or a professional seeking your next opportunity, we're here to make meaningful connections happen.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Partner With Us
-            </a>
-            <a
-              href="/services"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300"
-            >
-              Explore Services
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
     </div>
   );
 };
-
-export default About;
