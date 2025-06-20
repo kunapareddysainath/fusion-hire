@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Users, Target, Award, Heart } from "lucide-react";
 import { AnimatedSection } from "../components/ui/AnimatedSection";
-import directorImage from "../assets/director-placeholder.png";
+import directorImage from "../assets/director.jpg";
 
 export const About: React.FC = () => {
   const values = [

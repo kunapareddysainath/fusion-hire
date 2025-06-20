@@ -97,15 +97,6 @@ export const Footer: React.FC = () => {
                 <span className="text-sm font-medium">Azista Industries</span>
                 <ExternalLink className="h-3 w-3" />
               </a>
-              <a
-                href="https://www.trueigtech.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-primary-400 hover:text-primary-300 transition-colors"
-              >
-                <span className="text-sm font-medium"> TrueiG tech</span>
-                <ExternalLink className="h-3 w-3" />
-              </a>
             </div>
           </div>
         </div>

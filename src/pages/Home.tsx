@@ -96,11 +96,11 @@ export const Home: React.FC = () => {
                 solutions
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {/* Partner Azista */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-2 text-center">
                     Azista Industries
                   </h3>
                   <p className="text-gray-600 mb-4">
@@ -120,35 +120,6 @@ export const Home: React.FC = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
-
-              {/* Partner TrueiG tech*/}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                    TrueiG tech
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    At TRUEiGTECH, we don’t just develop iGaming solutions, we
-                    redefine what’s possible. An experienced team of
-                    strategists, designers, developers, and visionaries, we work
-                    together to create powerful iGaming experiences for your
-                    users. From white label platforms to completely customized
-                    sweepstakes, sportsbooks, and online casino systems, we
-                    deliver products that personify speed, security, and
-                    scalability.
-                  </p>
-                </div>
-                <a
-                  href="https://www.trueigtech.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-primary-500 text-white font-medium rounded-lg hover:bg-primary-600 transition-colors mt-auto"
-                >
-                  Visit TrueiG tech
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-
               {/* Add more partner cards here as needed */}
             </div>
           </div>
